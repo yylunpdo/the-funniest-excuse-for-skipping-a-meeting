@@ -23,6 +23,10 @@ def main() -> None:
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         f.write(line)
+    # Read back and verify: what the judge will read must be exactly the line.
+    with open(out_path, "r", encoding="utf-8", newline="") as f:
+        written = f.read()
+    assert written == line, "read-back mismatch in /output/entry.txt"
     print(f"Wrote {len(line)} characters to {out_path}")
 
 

@@ -19,4 +19,4 @@ python3 main.py
 cat /output/entry.txt
 ```
 
-Pure Python standard library, no dependencies. Deterministic: running it twice produces byte-identical output.
+Pure Python standard library, no dependencies. Deterministic: running it twice produces byte-identical output. After writing, `main.py` reads `/output/entry.txt` back and asserts it matches the line exactly, so what the judge reads is exactly what was written.
